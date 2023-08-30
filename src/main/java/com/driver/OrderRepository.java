@@ -26,7 +26,9 @@ public class OrderRepository {
     }
     public void orderPartnerPair(String orderId,String partnerId){
         Order order=orderList.get(orderId);
+        System.out.println(order.getId());
         DeliveryPartner dp=deliveryPartnerHashMap.get(partnerId);
+        System.out.println(dp.getId());
         if(order==null || dp==null)
             return;
         if(partnerOrderMap.containsKey(dp.getId())){
@@ -35,7 +37,7 @@ public class OrderRepository {
         else{
             List<Order> list=new ArrayList<>();
             list.add(order);
-            partnerOrderMap.put(order.getId(),list);
+            partnerOrderMap.put(dp.getId(),list);
         }
         dp.setNumberOfOrders(dp.getNumberOfOrders()+1);
     }
