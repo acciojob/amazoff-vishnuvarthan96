@@ -125,7 +125,7 @@ public class OrderController {
 
     @DeleteMapping("/delete-order-by-id/{orderId}")
     public ResponseEntity<String> deleteOrderById(@PathVariable String orderId){
-
+     orderServiceObj.deleteOrderById(orderId);
         //Delete an order and also
         // remove it from the assigned order of that partnerId
 

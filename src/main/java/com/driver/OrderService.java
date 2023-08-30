@@ -44,4 +44,8 @@ public class OrderService {
     public void deletePartnerById(String partnerId){
         orderRepositoryObj.deletePartnerById(partnerId);
     }
+
+    public void deleteOrderById(String orderId){
+        orderRepositoryObj.deleteOrderById(orderId);
+    }
 }
