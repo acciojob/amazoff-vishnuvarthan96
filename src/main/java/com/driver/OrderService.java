@@ -3,8 +3,6 @@ package com.driver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 @Service
 public class OrderService {
@@ -25,8 +23,8 @@ public class OrderService {
     public DeliveryPartner getPartner(String id){
         return orderRepositoryObj.getPartner(id);
     }
-    public int getOrderCount(String id){
-        return orderRepositoryObj.getOrderCount(id);
+    public int getOrderCountByPartnerId(String id){
+        return orderRepositoryObj.getOrderCountByPartnerId(id);
     }
     public List<String> getOrders(String id){
         return orderRepositoryObj.getOrders(id);

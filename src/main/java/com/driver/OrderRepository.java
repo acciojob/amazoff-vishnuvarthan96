@@ -46,7 +46,7 @@ public class OrderRepository {
     public DeliveryPartner getPartner(String id){
         return deliveryPartnerHashMap.get(id);
     }
-    public int getOrderCount(String id){
+    public int getOrderCountByPartnerId(String id){
         if(!partnerOrderMap.containsKey(id))
             return 0;
         List<Order> list=partnerOrderMap.get(id);
@@ -71,7 +71,7 @@ public class OrderRepository {
         int totalOrders=getAllOrder().size();
         int assignedOrders=0;
         for(String dp:partnerOrderMap.keySet()){
-            assignedOrders+=getOrderCount(dp);
+            assignedOrders+= getOrderCountByPartnerId(dp);
         }
         return totalOrders-assignedOrders;
     }
@@ -84,7 +84,7 @@ public class OrderRepository {
         if(deliveredOrder.containsKey(partnerId)){
             deliveredOrder.remove(partnerId);
         }
-        int countOfAllOrder=getOrderCount(partnerId);
+        int countOfAllOrder= getOrderCountByPartnerId(partnerId);
         List<String> ordersOfPartner = getOrders(partnerId);
         List<Order> deliveredByPartner =new ArrayList<>();
         for(String s:ordersOfPartner) {

@@ -1,6 +1,5 @@
 package com.driver;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,7 +62,7 @@ public class OrderController {
     @GetMapping("/get-order-count-by-partner-id/{partnerId}")
     public ResponseEntity<Integer> getOrderCountByPartnerId(@PathVariable String partnerId){
 
-        Integer orderCount = orderServiceObj.getOrderCount(partnerId);
+        Integer orderCount = orderServiceObj.getOrderCountByPartnerId(partnerId);
 
         //orderCount should denote the orders given by a partner-id
 
