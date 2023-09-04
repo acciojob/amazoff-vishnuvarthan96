@@ -109,7 +109,7 @@ public class OrderRepository {
         int h=time/60;
         int m=time%60;
 
-        String hh=String.valueOf(n);
+        String hh=String.valueOf(h);
         String mm="";
         if(m>=0 && m<=9){
             mm="0"+String.valueOf(m);
