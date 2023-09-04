@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 public class OrderService {
-    @Autowired
-    private OrderRepository orderRepositoryObj;
+
+     OrderRepository orderRepositoryObj=new OrderRepository();
     public void addOrder(Order order){
         orderRepositoryObj.addOrders(order);
     }
